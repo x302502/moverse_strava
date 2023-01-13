@@ -41,6 +41,7 @@ dependencies:
       ref: master # branch name
   html: ^0.15.0 # to remove the # at the end of the redirect url
   http: ^0.13.5
+  url_launcher: ^6.1.7
 
 dev_dependencies:
   flutter_test:

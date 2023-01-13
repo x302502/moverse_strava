@@ -49,6 +49,7 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
     stravaClient = StravaClient(secret: secret, clientId: clientId);
     //  data.add(new ActionData(name: 'Test01', distance: 111.2, type: 'Walk'));
     super.initState();
+    authentication();
   }
 
   FutureOr<Null> showErrorMessage(dynamic error, dynamic stackTrace) {
@@ -240,9 +241,9 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
                     text: '',
                     style: TextStyle(fontSize: 16, color: Colors.black),
                     children: <TextSpan>[
-                      TextSpan(text: ' \n', style: TextStyle(fontSize: 14)),
+                      TextSpan(text: 'Time \n', style: TextStyle(fontSize: 14)),
                       TextSpan(
-                        text: '${item.distance}',
+                        text: '${item.elapsedTime} s',
                         style: style02,
                       )
                     ],

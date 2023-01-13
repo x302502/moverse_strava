@@ -28,11 +28,11 @@ class ActionData {
   }
 }
 
-class ExampleAuthentication {
+class StravaService {
   final StravaClient stravaClient;
-  ExampleAuthentication(this.stravaClient);
+  StravaService(this.stravaClient);
 
-  Future<TokenResponse> testAuthentication(List<AuthenticationScope> scopes,
+  Future<TokenResponse> authentication(List<AuthenticationScope> scopes,
       String redirectUrl, String callbackUrlScheme) {
     return stravaClient.authentication.authenticate(
         scopes: scopes,
@@ -40,7 +40,7 @@ class ExampleAuthentication {
         callbackUrlScheme: callbackUrlScheme);
   }
 
-  Future<void> testDeauthorize() {
+  Future<void> deAuthorize() {
     return stravaClient.authentication.deAuthorize();
   }
 

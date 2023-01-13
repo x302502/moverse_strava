@@ -65,8 +65,8 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
     }
   }
 
-  void testAuthentication() {
-    ExampleAuthentication(stravaClient).testAuthentication([
+  void authentication() {
+    StravaService(stravaClient).authentication([
       AuthenticationScope.profile_read_all,
       AuthenticationScope.read_all,
       AuthenticationScope.activity_read_all
@@ -81,8 +81,8 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
 
   void loadData() async {
     try {
-      List<ActionData> res = await ExampleAuthentication(stravaClient)
-          .fetchListAction(token?.accessToken);
+      List<ActionData> res =
+          await StravaService(stravaClient).fetchListAction(token?.accessToken);
       setState(() {
         data = res;
       });
@@ -92,7 +92,7 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
   }
 
   void testDeauth() {
-    ExampleAuthentication(stravaClient).testDeauthorize().then((value) {
+    StravaService(stravaClient).deAuthorize().then((value) {
       setState(() {
         isLoggedIn = false;
         token = null;
@@ -137,11 +137,11 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ElevatedButton(
-              child: Text("Authorize"),
-              onPressed: testAuthentication,
+              child: Text("Link"),
+              onPressed: authentication,
             ),
             ElevatedButton(
-              child: Text("De Authorize"),
+              child: Text("Unlink"),
               onPressed: testDeauth,
             ),
           ],

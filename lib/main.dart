@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:moverse_app/examples/authentication.dart';
+import 'package:moverse_app/strava/strava_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';

@@ -26,10 +26,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>moverse.app</string>
+			<string>moverse</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>moverse.app</string>
+				<string>moverse</string>
 			</array>
 		</dict>
 	</array>

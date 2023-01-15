@@ -13,8 +13,8 @@ import 'secret.dart';
 void main() => runApp(MyApp());
 
 const titleApp = 'Moverse Strava';
-const String redirectUrl = "moverse.app://moverse.app";
-const String callbackUrlScheme = "moverse.app";
+const String redirectUrl = "moverse://login-callback";
+const String callbackUrlScheme = "moverse";
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -49,7 +49,7 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
     stravaClient = StravaClient(secret: secret, clientId: clientId);
     //  data.add(new ActionData(name: 'Test01', distance: 111.2, type: 'Walk'));
     super.initState();
-    authentication();
+    //authentication();
   }
 
   FutureOr<Null> showErrorMessage(dynamic error, dynamic stackTrace) {
@@ -150,25 +150,25 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
         SizedBox(
           height: 8,
         ),
-        // TextField(
-        //   minLines: 1,
-        //   maxLines: 3,
-        //   controller: _textEditingController,
-        //   decoration: InputDecoration(
-        //       border: OutlineInputBorder(),
-        //       label: Text("Access Token"),
-        //       suffixIcon: TextButton(
-        //         child: Text("Copy"),
-        //         onPressed: () {
-        //           Clipboard.setData(
-        //                   ClipboardData(text: _textEditingController.text))
-        //               .then((value) =>
-        //                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        //                     content: Text("Copied!"),
-        //                   )));
-        //         },
-        //       )),
-        // ),
+        TextField(
+          minLines: 1,
+          maxLines: 3,
+          controller: _textEditingController,
+          decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              label: Text("Access Token"),
+              suffixIcon: TextButton(
+                child: Text("Copy"),
+                onPressed: () {
+                  Clipboard.setData(
+                          ClipboardData(text: _textEditingController.text))
+                      .then((value) =>
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("Copied!"),
+                          )));
+                },
+              )),
+        ),
         Center(
           child: TextButton(
             child: token != null && token?.accessToken != null

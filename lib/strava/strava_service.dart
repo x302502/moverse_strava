@@ -68,4 +68,4 @@ class StravaService {
 }
 
 
-// strava://oauth/mobile/authorize?client_id=100233&redirect_uri=https://moverse.app&response_type=code&approval_prompt=auto&scope=activity%3Awrite%2Cread&state=test
+// strava://oauth/mobile/authorize?client_id=100233&redirect_uri=https://stravaflutter&response_type=code&approval_prompt=auto&scope=activity%3Awrite%2Cread&state=test
